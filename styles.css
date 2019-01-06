@@ -1,0 +1,221 @@
+/* 
+cg means css grid
+Con means container
+gt means grid template
+----
+cp means color pallete 
+jan2019 cp is for the background color.
+the pallette approach in this app seems to rely on assigning a class
+to lots of html elements.  for example <span class='cp09'>
+*/
+
+.cgCon1 {
+	display: grid;
+	height: 100%;
+    grid-template-rows: 4fr 1fr 1fr 4fr ;
+    grid-template-columns: 3fr 1fr 1fr ;
+	grid-column-gap: 3px;
+	grid-template-areas:
+	    "gt1 gt1 gt1"
+        "gt2 gt2 gt2"
+        "gt3 gt3 gt3"
+		"m1  m2  m3"
+		;
+}
+
+.n1 { grid-area: gt1; }
+.n2 { grid-area: gt2; }
+.n3 { grid-area: gt3; }
+.m1 { grid-area: m1; }
+.m2 { grid-area: m2; }
+.m3 { grid-area: m3; }
+
+
+
+/* Initial styles */
+body, html {
+	height: 100%;
+	margin: 0;
+    width: 100%;
+    background: #001111;
+    font-family: -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Oxygen-Sans,
+                Ubuntu,
+                Cantarell,
+                "Helvetica Neue",
+                sans-serif;
+}
+
+
+.n1, .n2, .n3, .m1, .m2, .m3 {
+	color: #fff;
+	/* font-weight: 200; */
+	font-size: 1.2rem;
+	text-align: left;
+	/* padding: 1vw 0; */
+	/* margin: 1vw; */
+	/* text-indent:  1vw; */
+}
+
+/* li layout */
+.cgCon2{ 
+    display: grid;
+	height: 100%;
+	grid-template-columns: 1fr 1fr 1fr ;
+	grid-column-gap: .6rem;
+	grid-template-areas:
+	    "gt21 gt21 gt21"
+		;
+
+}
+
+.liHead1{
+    border: 5px solid #000;
+}
+
+.n21 { grid-area: gt21; }
+
+ /* Define toggled state */
+ .cgCon1.-tog1 {
+    /*               was 4fr 1fr 1fr 4fr */
+	grid-template-rows:  4fr 0fr 1fr 5fr ;   
+  }
+  
+  /* .cgCon1.-tog1 .item2 {
+    visibility: hidden;
+    maybe needed for ie or firefox
+  } */
+
+/* 8 colors on that pen */
+/* .cp0{background-color: #00aba9;}
+.cp01{background-color: #001111;}
+.cp02{background-color: #003d3c;}
+.cp03{background-color: #006968;}
+.cp04{background-color: #009593;}
+.cp05{background-color: #20b5b4;}
+.cp06{background-color: #62cbca;}
+.cp07{background-color: #a4e1e0;} */
+
+ /* cool code pen for color pallet lists   */
+ /* https://codepen.io/afranceschetti/pen/zNWeVg   */
+ /* she shows a set of color codes in a row. */
+ /* copy those color codes like so: */
+ /* #00aba9 #001111 #003d3c #006968 #009593 #20b5b4 #62cbca #a4e1e0  */
+ /* cp0 is the base color. in this case, teal-ish. */
+ /* cp01 is near black. */
+ /* cp02-cp07 are dark-to-light, with base color cp0 somewhere in the middle. */
+ /* then paste those color codes into the cp0-cp07 cpasses above. */
+
+/* another pallete example: */
+/* #f0a30a #181001 #563a04 #936406 #d18e09 #f2ae29 #f6c668 #fadea8 */
+/* .cp0{background-color: #f0a30a;}
+.cp01{background-color: #181001;}
+.cp02{background-color: #563a04;}
+.cp03{background-color: #936406;}
+.cp04{background-color: #d18e09;}
+.cp05{background-color: #f2ae29;}
+.cp06{background-color: #f6c668;}
+.cp07{background-color: #fadea8;} */
+
+/* 12 colors on that pen */
+.cp01{background-color: #3e6d68;}
+.cp02{background-color: #060b0a;}
+.cp03{background-color: #101b1a;}
+.cp04{background-color: #192c2a;}
+.cp05{background-color: #223c39;}
+.cp06{background-color: #2b4c49;}
+.cp07{background-color: #355d58;} 
+.cp08{background-color: #3e6d68;}
+.cp09{background-color: #5b837e;}
+.cp10{background-color: #789995;}
+.cp11{background-color: #95afac;}
+.cp12{background-color: #b2c5c3;}
+.cp13{background-color: #cfdbda;}
+/* #3e6d68 */
+/* #060b0a #101b1a #192c2a #223c39 #2b4c49 #355d58 #3e6d68
+    #5b837e #789995 #95afac #b2c5c3 #cfdbda */
+/* cp01 = base cp02 = black cp03-cp12 dark to light */
+
+/* complimentary pallet, 'opposite' colors */
+/* https://www.sessions.edu/color-calculator/ */
+/* 12 colors on that pen, using the  */
+/* 6d603e */
+/* #0b0a06 #1b1810 #2c2619 #3c3522 #4c432b #5d5235 #6d603e #83785b #999078 #afa895 #c5c0b2 #dbd8cf */
+.cp21{background-color: #6d603e;}
+.cp22{background-color: #0b0a06;}
+.cp23{background-color: #1b1810;}
+.cp24{background-color: #2c2619;}
+.cp25{background-color: #3c3522;}
+.cp26{background-color: #4c432b;}
+.cp27{background-color: #5d5235;} 
+.cp28{background-color: #6d603e;}
+.cp29{background-color: #83785b;}
+.cp30{background-color: #999078;}
+.cp31{background-color: #afa895;}
+.cp32{background-color: #c5c0b2;}
+.cp33{background-color: #dbd8cf;}
+
+
+/* flex */
+/* 
+.flexContainer1  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 5px solid #000;
+  }
+
+.flexContainer2{
+    display: flex;
+    border: 5px solid green;
+} */
+
+
+/* -------------------------------------- */
+/* experiment with input, label, placeholder */ 
+/* waste of time?  inline labels are widespread mahem.
+better to put static labels above formfields and keep them there.
+stop trying to float labels.  aka inline labels
+https://www.nngroup.com/articles/form-design-placeholders/ */
+
+/* if you can't resist the damn floating labels, maybe look here: */
+/* https://thatemil.com/blog/2016/01/23/floating-label-no-js-pure-css/ */
+/* https://jsbin.com/pagiti/11/edit?html,css,output */
+
+
+/* put labels above input fields */
+input, label {
+    display:block;
+}
+
+/* make input areas grow & shrink depending on focus */
+/* not sure I like this */
+input{
+    font-size: 1.1rem
+}
+input:focus { 
+    background-color: palegoldenrod;
+    /* font-size: 1.3rem; */
+  }
+
+  /* ----------------------------------------- */
+  /* try some simple button styles */
+
+.but1 {
+    padding: 1rem;
+    border-radius: 1rem;
+    /* display: inline-block; */
+    /* border: none; */
+}
+.but1:hover, .but1:focus {
+        filter: brightness(85%); 
+        /* font-size: 1.1rem;   */
+}
+.but1:active {
+         filter: brightness(110%); 
+}
+/* ----------------------------------------- */
+
